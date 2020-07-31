@@ -28,6 +28,7 @@ export class AppComponent {
       this.previsoes = previsoes['list'];
       console.log(this.previsoes);
     });
+
     // this.info.timezone = this.longitude;
 
     console.log(cidadeInput.value);
