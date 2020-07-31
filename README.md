@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+LINK DA API - http://api.openweathermap.org/data/2.5/forecast?q=itu&appid=SUA_CHAVE_AQUI&units=metric&lang=pt_br&cnt=16
+
+

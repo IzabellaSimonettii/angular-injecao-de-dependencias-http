@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Previsao } from 'src/model/previsao';
+import { PrevisoesService } from './previsoes.service';
+import { Info } from '../model/info';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-injecao-de-dependencias-http';
+
+  public previsoes: Previsao[];
+  public longitude: string;
+  public cidade: string;
+
+  @Input() info: Info;
+
+  constructor(
+    private previsoesService: PrevisoesService) {
+  }
+
+  changeCity(cidadeInput) {
+
+    this.cidade = cidadeInput.value;
+
+    this.previsoesService.obterPrevisoes(this.cidade).subscribe((previsoes) => {
+      this.previsoes = previsoes['list'];
+      console.log(this.previsoes);
+    });
+    // this.info.timezone = this.longitude;
+
+    console.log(cidadeInput.value);
+  }
+
 }
